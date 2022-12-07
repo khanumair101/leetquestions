@@ -1,0 +1,49 @@
+/* Online C Compiler and Editor */
+#include <stdio.h>
+
+int main()
+{
+    int b[10],i,j,temp,target,n,m,c=0;
+    printf("Enter the size of the array:\n");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter the Array Elements:\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    //sorting the array
+    for(i=0;i<n;i++)                                            
+    {                                   
+        for(j=0;j<n;j++)                
+        {                               
+            if(a[j]>a[j+1])             
+            {                           
+                temp=a[j];              
+                a[j]=a[j+1];            
+                a[j+1]=temp;        
+            }                           
+        }
+    }
+    // Sorted array
+    printf("Array After Sorting will be:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    printf("\nEnter the target number: ");
+    scanf("%d",&target);
+    //Checking the occurence of the number
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==target)
+        {
+                b[c++]=i+1;
+        }
+    }
+    for(i=0;i<c;i++)
+    {
+        printf("%d ",b[i]);
+    }
+    return 0;
+}
